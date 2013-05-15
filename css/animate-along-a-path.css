@@ -1,0 +1,218 @@
+body {
+	background:none;
+}
+
+#outerWrapper {
+	width: 610px;
+	height: 625px;
+	position: relative;
+	/*background:url(http://www.nature.com/polopoly_fs/7.5642.1343835007!/image/BG.png);*/
+	/*background:url(images/BG_noPath.png);*/
+	
+	background-repeat:no-repeat;
+	/*border: 1px solid #000;*/
+}
+
+#holder {
+	top: 0px;
+	left: 0px;
+	position: absolute;
+	border:#F00;
+}
+
+#buttons {
+	width: 210px;
+	height: 45px;
+	position:absolute;
+	left: 20px;
+	top: 20px;
+}
+#prev {
+	/*display:none;*/
+	position:absolute;
+	left: 0px;
+	top: 0px;
+	cursor:pointer;
+	width:100px;
+	height:45px;
+	background:url(http://www.nature.com/polopoly_fs/7.5658.1343834081!/image/prev.png);
+	
+	background-position:0 45px;
+	float:left;
+}
+#next {
+	position:absolute;
+	left: 110px;
+	top: 0px;
+	cursor:pointer;
+	width:100px;
+	height:45px;
+	background: url(http://www.nature.com/polopoly_fs/7.5657.1343834051!/image/next.png);
+	
+	background-position:0 0px;
+	float:left;
+}
+#innerWrapper {
+	width: 345px;
+	height: 390px;
+	position: relative;
+	top: 20px;
+	left: 245px;
+	overflow: hidden;
+	border: none;
+}
+#panel {
+	/*345 x 8*/
+	width: 2760px;
+	height: 390px;
+}
+#event {
+	width: 345px;
+	height: 400px;
+	float:left;
+	overflow-y:auto;/*padding: 10px;
+	margin-right: 1px;*/
+}
+
+#eventInfo {
+	position:relative;
+	top:-15px;
+	left: 0px;
+	width: 325px;
+	height: 27px;
+	background:none;
+}
+
+/*Id to add to each close up pic when they are in shot*/
+.closeUp {
+	display:none;
+	position: absolute;
+	overflow: hidden;
+	border: none;
+}
+
+#key {
+	bottom: 37px;
+	left: 20px;
+	width: 590px;
+	height: 27px;
+	position: absolute;
+	background:none;
+}
+
+#graphicCredit {
+	position:absolute;
+	top: 600px;
+	width: 610px;
+	height: 25px;
+    color: #939393;
+    font-size: 85%;
+    font-style: italic;
+    /*line-height: 1.461em;*/
+    text-transform: uppercase;
+  padding-left: 0px;
+}
+
+
+#timeIcon {
+	position:relative;
+	margin-right:2px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5659.1343834115!/image/time.png);
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#timeIconWhite {
+	position:relative;
+	margin-right:10px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5660.1343834144!/image/timeWhite.png);
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#timeInfo {
+	position:relative;
+	margin-right:10px;
+	height:27px;
+	float:left;
+	vertical-align:central;
+}
+
+#altitudeIcon {
+	position:relative;
+	margin-right:2px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5640.1343833331!/image/altitude.png);
+	background-position:0 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#altitudeIconWhite {
+	position:relative;
+	margin-right:10px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5641.1343833362!/image/altitudeWhite.png);
+	background-position:0 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#altitudeInfo {
+	position:relative;
+	margin-right:10px;
+	height:27px;
+	float:left;
+	vertical-align:central;
+}
+
+#velocityIcon {
+	position:relative;
+	margin-right:2px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5661.1343834181!/image/velocity.png);
+	background-position:0 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#velocityIconWhite {
+	position:relative;
+	margin-right:10px;
+	width:27px;
+	height:39px;
+	background: url(http://www.nature.com/polopoly_fs/7.5662.1343834205!/image/velocityWhite.png);
+	background-position:0 0px;
+	background-repeat:no-repeat;
+	float:left;
+}
+
+#velocityInfo {
+	position:relative;
+	margin-right:2px;
+	height:27px;
+	float:left;
+	vertical-align:use-script;
+}
+
+
+
+.textWrap {
+	float:left;
+	margin: 0px 10px 5px 2px;
+}
+
+.superText {
+	position: relative;
+	bottom: 0.5em;
+	font-size: 0.8em;
+}
