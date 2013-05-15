@@ -5,10 +5,18 @@
 		//Start of active code
 		
 		// Set up the Raphael paper area
-		var r = Raphael("holder", 610, 625);
+		var r = Raphael("holder", 610, 600);;
 		
 		// Set up the a dashed black path down for the spaceship to follow
-		var p = r.path("M29.529,147.04l209.053,275.319c25.117,30.276,63.157,36.194,75.975,38.656l97.086,13.567l84.551,47.279l4.076,1.868l70.562-29.711").attr({fill: "none", stroke: "black", opacity: .5, "stroke-dasharray": "--"});
+		var p = r.path("M156,367c-45.5,18-45.325,36.188-12,51.5c24.333,11.181,60.483,18.692,108.84,11.181c72.876-11.32,209.017-108.491,226.76-142.723c16.5-31.833,11.566-55.124,10.399-62.958s0.5-18.167,12,2c15.887,27.859,42,83.5,42,83.5")
+					.attr("fill", "none")
+					.attr("stroke","#E2007A")
+					.attr("stroke-width",4);
+
+		var q = r.path("M154.249,365.361c-11.737,1.878-50.235,15.023-47.418,36.15c1.422,10.668,14.56,20.68,35.681,28.169c24.066,8.533,59.132,15.722,103.286,7.512C339.226,419.821,527.019,112.31,535,95.878")
+					.attr("fill", "none")
+					.attr("stroke","#009EE0")
+					.attr("stroke-width",4);
         
 		// Store the lenght of the path as in the variable len
 		var len = p.getTotalLength();
@@ -35,77 +43,59 @@
 		// The image of the space ship is applied to a Raphael image. By passing values into ".attr({along: .5})" the spaceship can now be moved along the path
 		
 		var e = r.image("images/c8.png", 0, -10, 34, 37).attr({along: 0});
-		
-		var eventWidth = $('#innerWrapper').width();
-		
-		//A variable that is used to postion the the innerWrapper div via scrollLeft
-		var position = 0;
+				
+		/*	Global variable used to control what stage we should animate to */
+		var counter = 0;
 		
 		// The function that moves the innerwrapper according to the position of the position variable,
 		//hides the tool tips, changes the colours of the divs and shows or hides the prev button
 		var moveTimeline = function () {
-			
-			$('#innerWrapper').animate({scrollLeft: position}, 'slow');
-			
-			//Fade out the visible close up image
-			$('#c1,#c2,#c3,#c4,#c5,#c6,#c7,#c8,#c9').fadeOut();
-			
+						
 			// Fade in the relvant close up image /or move the space ship to the relevant position along the path
-			switch(position) {
-				case eventWidth*0:
+			switch(counter) {
+				case 0:
 				e.animate({along: 0}, 1000, "<>");
-				/*$('#c1').fadeIn();*/
-				 break;
-				case eventWidth*1:
+				break;
+				case 1:
+
 				e.animate({along: .14}, 1000, "<>");
-				/*$('#c2').fadeIn();*/
 				break;
-				case eventWidth*2:
+
+				case 2:
 				e.animate({along: .21}, 500, "<>");
-				/*$('#c3').fadeIn();*/
 				break;
-				case eventWidth*3:
+
+				case 3:
 				e.animate({along: .48}, 1000, "<>");
-				/*$('#c4').fadeIn();*/
 				break;
-				case eventWidth*4:
+
+				case 4:
 				e.animate({along: .65}, 800, "<>");
-				/*$('#c5').fadeIn();*/
 				break;
-				case eventWidth*5:
+
+				case 5:
 				e.animate({along: .7}, 500, "<>");
-				/*$('#c6').fadeIn();*/
 				break;
-				case eventWidth*6:
+
+				case 6:
 				e.animate({along: .84}, 800, "<>");
-				/*$('#c7').fadeIn();*/
 				break;
-				case eventWidth*7:
+
+				case 7:
 				e.animate({along: 1}, 800, "<>");
-				/*$('#c8').fadeIn();
-				$('#c9').fadeIn();*/
 				break;
 				default: break;
 			}
 			
-			
-			/*if (position > 0 && $('#prev').is(':hidden') ) {
-				$('#prev').fadeIn();
-			}*/
-			
-			/*if (position < (eventWidth*1) && $('#prev').is(':visible')) {
-				$('#prev').fadeOut();
-			}*/
-			
-			if (position < (eventWidth*1)) {
+			if (counter < 1) {
 				$('#prev').css({'background-position':'0 45px'});;
 			}
 			
-			if (position >= (eventWidth*7) && $('#prev').is(':visible')) {
+			if (counter >= 7 && $('#prev').is(':visible')) {
 				$('#next').fadeOut();
 			}
 			
-			if (position < (eventWidth*8) && $('#next').is(':hidden') ) {
+			if (counter < 8 && $('#next').is(':hidden') ) {
 				$('#next').fadeIn();
 			}
 			
@@ -115,15 +105,15 @@
 		
 		// Two functions to adjust the value of postion and move the time line for use by the buttons
 		var decreasePosition = function () {
-			if (position > 0) {
-				position -= eventWidth;
+			if (counter > 0) {
+				counter -= 1;
 				moveTimeline();
 				}
 		};
 		
 		var increasePosition = function () {
-			if (position < (eventWidth*8)) {
-				position += eventWidth;
+			if (counter < 8) {
+				counter += 1;
 				moveTimeline();
 				}
 		};
@@ -140,7 +130,7 @@
 		
 		$('#next').hover(function(){
 			
-			if (position > (eventWidth*1)) {
+			if (counter > 1) {
 			
 			$(this).css({'background-position':'0 45px'});
 			
@@ -148,7 +138,7 @@
 			
 			},function(){
 				
-			if (position > (eventWidth*1)) {
+			if (counter > 1) {
 			
 			$(this).css({'background-position':'0 0px'})
 			
