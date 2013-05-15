@@ -2,14 +2,14 @@ body {
 	background:none;
 }
 
-#outerWrapper {
+.outerWrapper {
 	width: 610px;
 	height: 600px;
 	position: relative;
 	background: black;
 }
 
-#holder {
+.holder {
 	top: 0px;
 	left: 0px;
 	position: absolute;
@@ -48,35 +48,3 @@ body {
 	background-position:0 0px;
 	float:left;
 }
-#innerWrapper {
-	width: 345px;
-	height: 390px;
-	position: relative;
-	top: 20px;
-	left: 245px;
-	overflow: hidden;
-	border: none;
-}
-#panel {
-	/*345 x 8*/
-	width: 2760px;
-	height: 390px;
-}
-#event {
-	width: 345px;
-	height: 400px;
-	float:left;
-	overflow-y:auto;/*padding: 10px;
-	margin-right: 1px;*/
-}
-
-#eventInfo {
-	position:relative;
-	top:-15px;
-	left: 0px;
-	width: 325px;
-	height: 27px;
-	background:none;
-}
-
-
